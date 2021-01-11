@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  h1 {text-align: center;}
+ body {
+  font-family: Arial;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+  height: 100%;
+  margin: 0;
+  font-family: Arial;
+}
+
+/* Style tab links */
+.tablink {
+  background-color: #555;
+  color: white;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  font-size: 17px;
+  width: 25%;
+}
+
+.tablink:hover {
+  background-color: #777;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+  color: white;
+  display: none;
+  padding: 100px 20px;
+  height: 60%;
+}
+
+#benefites {background-color: rgb(126, 145, 226);}
+#Products {background-color: rgb(241, 112, 112);}
+#Motivation {background-color: rgb(195, 231, 96);}
+#Dedicate {background-color: rgb(245, 177, 177);}
+</style>
+</head>
+<body>
+  <div>
+    <h1 style="color:blue"><b> LIFE OF BAMBOO TREE</b></h1>
+  </div>
+
+  <div class="container">
+    <div class="mySlides">
+      <div class="numbertext">1 / 6</div>
+      <img src="bamboo1.jpg" style="width:100%" height="10%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 6</div>
+      <img src="bamboo2.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 6</div>
+      <img src="bamboo3.jpg" style="width:100%">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext">4 / 6</div>
+      <img src="bamboo4.jpg" style="width:100%">
+    </div>
+  
+     <div class="mySlides">
+      <div class="numbertext">5 / 6</div>
+      <img src="bamboo5.jpg" style="width:100%">
+    </div>
+      
+    <div class="mySlides">
+      <div class="numbertext">6 / 6</div>
+      <img src="bamboo6.jpg" style="width:100%">
+    </div> 
+      
+    <a class="prev" onclick="plusSlides(-1)">❮</a>
+    <a class="next" onclick="plusSlides(1)">❯</a>
+  
+    <div class="caption-container">
+      <p id="caption"></p>
+    </div>
+  
+    <div class="row">
+      <div class="column">
+        <img class="demo cursor" src="bamboo1.jpg" style="width:100%" onclick="currentSlide(1)" alt="Bamboo forest">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="bamboo2.jpg" style="width:100%" onclick="currentSlide(2)" alt="Landscap of Bamboo">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="bamboo3.jpg" style="width:100%" onclick="currentSlide(3)" alt="beautifull Landscap">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="bamboo4.jpg" style="width:100%" onclick="currentSlide(4)" alt="Read wall">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="bamboo5.jpg" style="width:100%" onclick="currentSlide(5)" alt="Texture">
+      </div>
+      <div class="column">
+        <img class="demo cursor" src="bamboo6.jpg" style="width:100%" onclick="currentSlide(6)" alt="morning-fengshui">
+      </div>
+    </div>
+  </div>
+  
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("demo");
+  var captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+<button class="tablink" onclick="openPage('benefites', this, 'rgb(126, 145, 226)')">benefites</button>
+<button class="tablink" onclick="openPage('Products', this, 'rgb(241, 112, 112)')" id="defaultOpen">Products</button>
+<button class="tablink" onclick="openPage('Motivation', this, 'rgb(195, 231, 96)')">Motivation</button>
+<button class="tablink" onclick="openPage('Dedicate', this, 'rgb(245, 177, 177)')">Dedicate</button>
+
+<div id="benefites" class="tabcontent">
+  <h3>benefites</h3>
+  <p>It is grown without pesticides or chemical fertilisers.</p>
+    <p>It requires no irrigation.</p>
+    <p>It rarely needs replanting.</p>
+    <p>It grows rapidly and can be harvested in 3-5 years.</p>
+    <p>It produces 35% more oxygen that an equivalent stand of trees.</p>
+    <p>It sequesters carbon dioxide and is carbon neutral.</p>
+    <p>It is a critical element in the balance of oxygen and carbon dioxide in the atmosphere.</p>
+    <p>It is an excellent soil erosion inhibitor.</p>
+    <p>It grows in a wide range of environments</p>
+    <p>It’s production into fibres has lower environmental impact than other forms of fibre, especially synthetic ones.</p>
+</div>
+
+<div id="Products" class="tabcontent">
+  <h3>Products</h3>
+  <p>Bamboo toilet paper. ...</p>
+    <p> Bamboo on-the-go utensils. ...</p>
+      <p>Bamboo Speakers. ...</p>
+        <p>Bamboo towels. ...</p>
+          <p>Bamboo Bottle. ...</p>
+            <p>Bamboo solar battery. ...</p>
+              <p>Bamboo floors. ...</p>
+                <p>Bamboo computer accessories.</p> 
+</div>
+
+<div id="Motivation" class="tabcontent">
+  <h3>Motivation</h3>
+  <p>A man got frustrated with life. Despite all the hard work and effort, failure was all that he learnt.  Feeling defeated with life, he left everything and exiled himself in the woods. There he met a Hermit. The disappointed man shared is failure with the hermit. “Give me one good reason not to quit?”- He pleaded the Hermit
+
+    “Look”, the hermit said, pointing towards two plants. “Do you see that fern and bamboo there?
+    
+    “Yes”, the man nodded.
+    
+    “When I planted the fern and the bamboo seeds, I took very good care of them. I gave them water, light and fertilizer. Within a short period of time the fern quickly grew from the earth”, the hermit continued.
+    
+    “But despite the Bamboo seed being watered and nurtured for years, it did not outwardly grow as much as an inch. In fact, nothing at all happened in the first year. There was no sign of growth.  But, I did not give up on the Bamboo seed and continued to water and nurture it.  By the fifth year, a tiny sprout emerged from the earth. And within six months, the tree grew a hundred feet tall.”
+    
+    “So, did the bamboo tree lie dormant for four years only to grow exponentially in the fifth?” the hermit asked.  Baffled by the question the man kept quiet.  “The answer is quite obvious. The little tree was growing underground, developing a root system strong enough to support its potential for outward growth in the fifth year and beyond. Had the tree not developed a strong foundation, it would not have sustained its life as it grew.”
+    
+    “Did you know that all the time you had been struggling, you were growing strong roots”, remarked the hermit
+    
+    The man learned his lesson that day. He learnt the value of persistence and hard work. The fern and the bamboo stood right in front of him as he walked towards his life to continue to work on his dreams.</p>
+</div>
+
+<div id="Dedicate" class="tabcontent">
+  <h3>naWIN</h3>
+  <p>Dedicated to the greatest <b>L&T</b> Employee.</p>
+  <h1> SRINADH BRO</h1>
+</div>
+<script>
+  function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+  }
+  
+  // Get the element with id="defaultOpen" and click on it
+  document.getElementById("defaultOpen").click();
+  </script>
+</body>
+</html> 
